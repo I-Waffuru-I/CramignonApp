@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CramignonApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Cramignon App" Height="450" Width="800">
+
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Grid.Row="0" Style="{StaticResource NavigationStackPanel}">
+
+            <Button Name="peopleBtn" Click="peopleBtn_Click" Height="50"  VerticalAlignment="Top">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Path Fill="{StaticResource DarkBlueBrush}" Data="M 0 0 L 140 0 L 160 50 L 0 50 L 0 0"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+                <TextBlock Text="Person" Style="{StaticResource NavigationTextBlock}"/>
+            </Button>
+            <Button Name="couplesBtn" Click="couplesBtn_Click" Margin="0,0,0,0" Height="50" VerticalAlignment="Top">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Path Fill="{StaticResource MediumBlueBrush}" Data="M -20 0 L 150 0 L 170 50 L 0 50 L -20 0"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+                <TextBlock Text="Couples" Style="{StaticResource NavigationTextBlock}"/>
+            </Button>
+        </StackPanel>
+
+
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>
